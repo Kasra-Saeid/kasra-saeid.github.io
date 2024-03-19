@@ -16,7 +16,7 @@ const academiaData = [
     {
         "name": "Top 5% at national university enterance exam. (konkur)",
         "imgSrc": "",
-        "description": "At first i applied to mechanical engineering but after 4 terms i changed my branch to Computer Engineering do to my main interest in this field.",
+        "description": "At first i applied to mechanical engineering but after 4 terms i changed my branch to Computer Engineering due to my main interest in this field.",
         "link": "",
         "skills": ""
      
