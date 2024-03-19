@@ -1,0 +1,80 @@
+body{
+    margin: 2%;
+    height: 100%;
+}
+
+#scaffold{
+    height: 100%;
+    font-family: "Rubik", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 450;
+    font-style: normal;
+}
+
+
+
+#intro-sec .row{
+    justify-content: center;
+    margin: 1%;
+}
+
+#intro-image {
+    min-width: 100pt;
+    width: 20%;
+    margin: 1%;
+    border-radius: 50%;
+    background-size: cover;
+}
+
+#intro-text {
+    justify-content: center;
+    text-align: center;
+}
+
+#resume-content-sec{
+    border-style: dashed;
+    margin: 2% 0%;
+    padding: 2%;
+    height: fit-content;
+}
+
+.tile{
+    border-style: dashed;
+    margin: 2%;
+    height: auto;
+    padding: 3%;
+}
+
+.tile-image {
+    width: 100%;
+    margin: 5%;
+    background-size: 100% 100%;
+    border-radius: 5% 5% 5% 5%;
+}
+
+.tile-name {
+    height: 20%;
+    margin: 0.5%;
+    font-weight: bold;
+    font-size: large;
+}
+
+.tile-link{
+    display: inline;
+}
+
+.tile-description{
+    display: inline;
+    margin: 0.5%;
+    font-size: large;
+}
+
+.tile-skills {
+    margin: 1% 0;
+    font-weight: lighter;
+    font-size: normal;
+}
+
+a:link {
+    color: #dc3545;
+}
