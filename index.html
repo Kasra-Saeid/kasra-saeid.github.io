@@ -1,74 +1,306 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Kasra Saeid</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-         rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
-          crossorigin="anonymous">
-        <link rel="stylesheet" href="./styles.css">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
-    </head>
-    <body class="bg-dark text-light">
-        <div class="container-fluid" id="scaffold">
-<!-- Brief intrudoction of my self section -->
-           <div class="container-fluid" id="intro-sec">
-                <div class="row">
-                    <img class="" src="./images/me.jpg" id="intro-image" />
-                </div>
-                <div class="row" id="intro-text">Hey there, i'm <h4> Kasra</h4>
-                </br><h4>Quant Analyst</h4></div>
-           </div> 
-<!-- Resume Section including resume toggle button -->
-            <div class="row">
-                <span style="display: inline;">
-                    Current Tab:
-                <div class="btn-group" role="group" style="display: inline;">
-                    <button type="button" class="btn btn-danger dropdown-toggle" id="btn" data-bs-toggle="dropdown" 
-                    area-expanded="false">Home</button>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" id="project-btn" href="#">Projects</a></li>
-                        <li><a class="dropdown-item" id="academia-btn" href="#">Academia</a></li>
-                        <li><a class="dropdown-item" id="publication-btn" href="#">Publications</a></li>
-                    </ul>
-                </div>
-            </div>
-<!-- Resume Content Section -->
-            <div class="container-fluid" id="resume-content-sec">
-                <h5> Fields of interest:</h5>
-                <ul>
-                    <li>Data Science</li>
-                    <li>Deep Learning</li>
-                    <li>Game Theory</li>
-                    <li>Social Network analysis</li>
-                    <li>Data Structure and Algorithm Design</li>
-                    <li>Stochastic Analysis</li>
-                </ul>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kasra Saeid - Portfolio</title>
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
 
+        @keyframes slideInFromLeft {
+            from { transform: translateX(-50px); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
 
+        @keyframes slideInFromRight {
+            from { transform: translateX(50px); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
 
-            </div>
+        :root {
+            --primary-color: #1a5f7a;
+            --secondary-color: #2c3e50;
+            --accent-color: #e74c3c;
+            --light-color: #ecf0f1;
+            --dark-color: #34495e;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--dark-color);
+            background-color: var(--light-color);
+            margin: 0;
+            padding: 0;
+            animation: fadeIn 1s ease-out;
+        }
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            padding: 20px;
+        }
+        header {
+            background: var(--primary-color);
+            color: var(--light-color);
+            padding: 2rem 0;
+            text-align: center;
+            animation: slideInFromLeft 1s ease-out;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            animation: slideInFromRight 1s ease-out 0.5s both;
+        }
+        header p {
+            font-size: 1.2rem;
+            margin-top: 0.5rem;
+            animation: slideInFromRight 1s ease-out 0.7s both;
+        }
+        .btn-group {
+            display: flex;
+            justify-content: center;
+            margin: 2rem 0;
+        }
+        .btn {
+            background: var(--secondary-color);
+            color: var(--light-color);
+            padding: 0.7rem 1.5rem;
+            border: none;
+            cursor: pointer;
+            margin: 0 0.5rem;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+            border-radius: 5px;
+            animation: fadeIn 1s ease-out 1s both;
+        }
+        .btn:hover {
+            background: var(--accent-color);
+            transform: translateY(-3px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        #content-section {
+            background: #ffffff;
+            padding: 2rem;
+            margin-top: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            animation: fadeIn 1s ease-out 1.2s both;
+        }
+        .tile {
+            background: var(--light-color);
+            border: 1px solid #ddd;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            animation: fadeIn 0.5s ease-out;
+        }
+        .tile:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+        }
+        .tile-name {
+            font-weight: bold;
+            color: var(--primary-color);
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+        .tile-description {
+            margin: 1rem 0;
+        }
+        .tile-skills {
+            font-style: italic;
+            color: var(--secondary-color);
+        }
+        #filter-input {
+            width: 100%;
+            padding: 0.8rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            animation: fadeIn 1s ease-out 1.5s both;
+        }
+        #filter-input:focus {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 2px rgba(26, 95, 122, 0.2);
+        }
+        footer {
+            text-align: center;
+            padding: 1.5rem;
+            background: var(--secondary-color);
+            color: var(--light-color);
+            margin-top: 2rem;
+            animation: slideInFromLeft 1s ease-out;
+        }
+        #interests {
+            background: var(--primary-color);
+            color: var(--light-color);
+            padding: 2rem;
+            margin: 2rem 0;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        #interests h2 {
+            margin-top: 0;
+            color: var(--light-color);
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+        }
+        #interests ul {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+        }
+        #interests li {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 0.8rem 1.2rem;
+            border-radius: 25px;
+            font-size: 1rem;
+        }
+        .keywords {
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            color: var(--secondary-color);
+        }
+        a {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        a:hover {
+            color: var(--accent-color);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Kasra Saeid</h1>
+            <p>Quant Analyst</p>
+        </div>
+    </header>
 
-
-
-
-
-
-
-
+    <div class="container">
+        <div id="interests">
+            <h2>Fields of Interest</h2>
+            <ul>
+                <li>Quantitative Finance</li>
+                <li>Machine Learning</li>
+                <li>Game Theory</li>
+                <li>Algorithmic Trading</li>
+                <li>Financial Modeling</li>
+                <li>Time Series Analysis</li>
+                <li>Social Network Analysis</li>
+            </ul>
         </div>
 
-<!-- Footer Section-->
+        <div class="btn-group">
+            <button class="btn" id="projects-btn">Projects</button>
+            <button class="btn" id="academia-btn">Academia</button>
+            <button class="btn" id="publications-btn">Publications</button>
+        </div>
 
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-          crossorigin="anonymous"></script>
-        <script type="module" src="./main.js" async defer></script>
-    </body>
-    <footer style="position: relative;bottom: 0; left: auto;">Developed by Kasra Saeid</footer>
+        <input type="text" id="filter-input" placeholder="Filter by keyword...">
+
+        <div id="content-section"></div>
+    </div>
+
+    <footer>
+        <p>Developed by Kasra Saeid</p>
+    </footer>
+
+    <script>
+        const data = {
+            projects: [
+                {
+                    name: "Algorithmic Trading Strategy",
+                    description: "Developed a machine learning-based algorithmic trading strategy for high-frequency trading.",
+                    link: "https://github.com/kasra-saeid/algo-trading",
+                    skills: "Tools and Skills: Python, Pandas, Scikit-learn, Backtrader",
+                    keywords: ["algorithmic trading", "machine learning", "python"]
+                },
+                {
+                    name: "Risk Management Dashboard",
+                    description: "Created an interactive dashboard for real-time risk assessment of financial portfolios.",
+                    link: "https://github.com/kasra-saeid/risk-dashboard",
+                    skills: "Tools and Skills: R, Shiny, ggplot2, VaR analysis",
+                    keywords: ["risk management", "data visualization", "R"]
+                }
+            ],
+            academia: [
+                {
+                    name: "Master's in Financial Engineering",
+                    description: "Completed with distinction, focusing on quantitative methods and financial modeling.",
+                    link: "",
+                    skills: "Key courses: Stochastic Calculus, Time Series Analysis, Derivatives Pricing",
+                    keywords: ["financial engineering", "quantitative finance"]
+                },
+                {
+                    name: "Research Assistant - Quantitative Finance Lab",
+                    description: "Assisted in research projects related to option pricing models and market microstructure.",
+                    link: "",
+                    skills: "Skills: MATLAB, LaTeX, Statistical Analysis",
+                    keywords: ["research", "option pricing", "market microstructure"]
+                }
+            ],
+            publications: [
+                {
+                    name: "Machine Learning in Quantitative Finance: A Review",
+                    description: "Published in the Journal of Computational Finance.",
+                    link: "https://doi.org/10.21314/JCF.2023.053",
+                    skills: "Keywords: Machine Learning, Quantitative Finance, Algorithmic Trading",
+                    keywords: ["machine learning", "quantitative finance", "research"]
+                }
+            ]
+        };
+
+        function createTile(content) {
+            const moreInfo = content.link 
+                ? `<a href="${content.link}" target="_blank">More info</a><br>
+                   <div class="tile-description">${content.description}</div>`
+                : `<div class="tile-description">${content.description}</div>`;
+            
+            return `
+                <div class="tile">
+                    <div class="tile-name">${content.name}</div>
+                    ${moreInfo}
+                    <div class="tile-skills">${content.skills}</div>
+                    <div class="keywords">Keywords: ${content.keywords.join(', ')}</div>
+                </div>
+            `;
+        }
+
+        function displayContent(category) {
+            const contentSection = document.getElementById('content-section');
+            contentSection.innerHTML = data[category].map(createTile).join('');
+        }
+
+        function filterContent() {
+            const filterValue = document.getElementById('filter-input').value.toLowerCase();
+            const tiles = document.querySelectorAll('.tile');
+            
+            tiles.forEach(tile => {
+                const text = tile.textContent.toLowerCase();
+                tile.style.display = text.includes(filterValue) ? '' : 'none';
+            });
+        }
+
+        document.getElementById('projects-btn').addEventListener('click', () => displayContent('projects'));
+        document.getElementById('academia-btn').addEventListener('click', () => displayContent('academia'));
+        document.getElementById('publications-btn').addEventListener('click', () => displayContent('publications'));
+        
+        document.getElementById('filter-input').addEventListener('input', filterContent);
+
+        // Initial display
+        displayContent('projects');
+    </script>
+</body>
 </html>
