@@ -430,10 +430,8 @@ class WebsiteDataLoader {
 
         const personal = this.data.personal;
         
-        // Update name and title
-        document.querySelectorAll('.logo-text').forEach(el => {
-            el.innerHTML = `${personal.name}<span class="accent">.dev</span>`;
-        });
+        // Don't update logo - let CSS handle the KS logo display
+        // The logo styling is now handled in CSS with the ::before pseudo-element
 
         // Update hero section
         const heroTitle = document.querySelector('.hero-title .gradient-text');
@@ -496,24 +494,12 @@ class WebsiteDataLoader {
             console.log(`Processing skill category ${index}:`, skill);
             const skillCategory = document.createElement('div');
             skillCategory.className = 'skill-category';
-            skillCategory.style.cssText = 'background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); padding: 2rem; border-radius: 15px; transition: all 0.3s ease; backdrop-filter: blur(10px); display: block !important; visibility: visible !important; opacity: 1 !important; cursor: pointer;';
-            
-            // Add hover effect
-            skillCategory.addEventListener('mouseenter', () => {
-                skillCategory.style.transform = 'translateY(-5px)';
-                skillCategory.style.boxShadow = '0 10px 30px rgba(0, 212, 255, 0.2)';
-                skillCategory.style.borderColor = 'rgba(0, 212, 255, 0.3)';
-            });
-            skillCategory.addEventListener('mouseleave', () => {
-                skillCategory.style.transform = 'translateY(0)';
-                skillCategory.style.boxShadow = 'none';
-                skillCategory.style.borderColor = 'rgba(255, 255, 255, 0.1)';
-            });
+            skillCategory.style.cssText = 'display: block !important; visibility: visible !important; opacity: 1 !important;';
             
             skillCategory.innerHTML = `
-                <h3 style="color: #fff !important; margin-bottom: 1rem; font-size: 1.3rem; display: flex; align-items: center; gap: 0.5rem;"><i class="${skill.icon || 'fas fa-cog'}" style="color: #00d4ff;"></i> <span>${this.getText(skill.category) || 'Unknown Category'}</span></h3>
-                <div class="skill-items" style="display: flex; flex-wrap: wrap; gap: 0.75rem;">
-                    ${(skill.items || []).map(item => `<span class="skill-tag" style="background: linear-gradient(135deg, #00d4ff, #7c3aed); color: white; padding: 0.5rem 1rem; border-radius: 25px; font-size: 0.9rem; font-weight: 500; display: inline-block; transition: all 0.3s ease;">${item}</span>`).join('')}
+                <h3><i class="${skill.icon || 'fas fa-cog'}"></i> <span>${this.getText(skill.category) || 'Unknown Category'}</span></h3>
+                <div class="skill-items">
+                    ${(skill.items || []).map(item => `<span class="skill-tag">${item}</span>`).join('')}
                 </div>
             `;
             
@@ -584,19 +570,7 @@ class WebsiteDataLoader {
             console.log(`Processing featured item ${index}:`, item);
             const featuredCard = document.createElement('div');
             featuredCard.className = 'project-card';
-            featuredCard.style.cssText = 'background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); padding: 2rem; border-radius: 15px; transition: all 0.3s ease; backdrop-filter: blur(10px); display: block !important; visibility: visible !important; opacity: 1 !important; min-height: auto; overflow: hidden; position: relative; cursor: pointer;';
-            
-            // Add hover effect
-            featuredCard.addEventListener('mouseenter', () => {
-                featuredCard.style.transform = 'translateY(-10px)';
-                featuredCard.style.boxShadow = '0 20px 40px rgba(0, 0, 0, 0.3)';
-                featuredCard.style.borderColor = 'rgba(0, 212, 255, 0.3)';
-            });
-            featuredCard.addEventListener('mouseleave', () => {
-                featuredCard.style.transform = 'translateY(0)';
-                featuredCard.style.boxShadow = 'none';
-                featuredCard.style.borderColor = 'rgba(255, 255, 255, 0.1)';
-            });
+            featuredCard.style.cssText = 'display: block !important; visibility: visible !important; opacity: 1 !important;';
             
             const linksHtml = Object.entries(item.links || {}).map(([key, url]) => {
                 let icon = 'fas fa-external-link-alt';
@@ -607,20 +581,20 @@ class WebsiteDataLoader {
                 else if (key === 'demo') icon = 'fas fa-play';
                 else if (key === 'lab') icon = 'fas fa-university';
                 
-                return `<a href="${url}" class="project-link" style="display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; margin: 0 0.5rem 0 0; background: rgba(0, 212, 255, 0.1); color: #00d4ff; text-decoration: none; border-radius: 50%; border: 1px solid rgba(0, 212, 255, 0.3); transition: all 0.3s ease; font-size: 1rem;"><i class="${icon}"></i></a>`;
+                return `<a href="${url}" class="project-link"><i class="${icon}"></i></a>`;
             }).join('');
             
             featuredCard.innerHTML = `
-                <div class="project-image" style="text-align: center; font-size: 3rem; color: #00d4ff; margin-bottom: 1.5rem;">
+                <div class="project-image">
                     <i class="${item.icon || 'fas fa-project-diagram'}"></i>
                 </div>
                 <div class="project-content">
-                    <h3 style="color: #fff !important; font-size: 1.4rem; margin-bottom: 1rem; font-weight: 600; text-align: center;">${this.getText(item.title) || 'Untitled Project'}</h3>
-                    <p style="color: #cbd5e1 !important; line-height: 1.6; margin-bottom: 1.5rem; font-size: 0.95rem; text-align: center;">${this.getText(item.description) || 'No description available'}</p>
-                    <div class="project-tags" style="display: flex; flex-wrap: wrap; gap: 0.5rem; justify-content: center; margin: 1.5rem 0;">
-                        ${(item.tags || []).map(tag => `<span style="background: rgba(0, 212, 255, 0.1); color: #00d4ff; padding: 0.25rem 0.75rem; border-radius: 15px; font-size: 0.8rem; border: 1px solid rgba(0, 212, 255, 0.2); display: inline-block;">${tag}</span>`).join('')}
+                    <h3>${this.getText(item.title) || 'Untitled Project'}</h3>
+                    <p>${this.getText(item.description) || 'No description available'}</p>
+                    <div class="project-tags">
+                        ${(item.tags || []).map(tag => `<span class="project-tag">${tag}</span>`).join('')}
                     </div>
-                    <div class="project-links" style="display: flex; justify-content: center; align-items: center;">
+                    <div class="project-links">
                         ${linksHtml}
                     </div>
                 </div>
@@ -663,39 +637,27 @@ class WebsiteDataLoader {
             const projectCard = document.createElement('div');
             projectCard.className = 'project-card';
             projectCard.setAttribute('data-category', project.category);
-            projectCard.style.cssText = 'background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); padding: 2rem; border-radius: 15px; transition: all 0.3s ease; backdrop-filter: blur(10px); display: block !important; visibility: visible !important; opacity: 1 !important; min-height: auto; overflow: hidden; position: relative; cursor: pointer;';
-            
-            // Add hover effect
-            projectCard.addEventListener('mouseenter', () => {
-                projectCard.style.transform = 'translateY(-10px)';
-                projectCard.style.boxShadow = '0 20px 40px rgba(0, 0, 0, 0.3)';
-                projectCard.style.borderColor = 'rgba(0, 212, 255, 0.3)';
-            });
-            projectCard.addEventListener('mouseleave', () => {
-                projectCard.style.transform = 'translateY(0)';
-                projectCard.style.boxShadow = 'none';
-                projectCard.style.borderColor = 'rgba(255, 255, 255, 0.1)';
-            });
+            projectCard.style.cssText = 'display: block !important; visibility: visible !important; opacity: 1 !important;';
             
             const linksHtml = Object.entries(project.links || {}).map(([key, url]) => {
                 let icon = 'fas fa-external-link-alt';
                 if (key === 'github') icon = 'fab fa-github';
                 else if (key === 'demo') icon = 'fas fa-play';
                 
-                return `<a href="${url}" class="project-link" style="display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; margin: 0 0.5rem 0 0; background: rgba(0, 212, 255, 0.1); color: #00d4ff; text-decoration: none; border-radius: 50%; border: 1px solid rgba(0, 212, 255, 0.3); transition: all 0.3s ease; font-size: 1rem;"><i class="${icon}"></i></a>`;
+                return `<a href="${url}" class="project-link"><i class="${icon}"></i></a>`;
             }).join('');
             
             projectCard.innerHTML = `
-                <div class="project-image" style="text-align: center; font-size: 3rem; color: #00d4ff; margin-bottom: 1.5rem;">
+                <div class="project-image">
                     <i class="${project.icon || 'fas fa-project-diagram'}"></i>
                 </div>
                 <div class="project-content">
-                    <h3 style="color: #fff !important; font-size: 1.4rem; margin-bottom: 1rem; font-weight: 600; text-align: center;">${this.getText(project.title) || 'Untitled Project'}</h3>
-                    <p style="color: #cbd5e1 !important; line-height: 1.6; margin-bottom: 1.5rem; font-size: 0.95rem; text-align: center;">${this.getText(project.description) || 'No description available'}</p>
-                    <div class="project-tags" style="display: flex; flex-wrap: wrap; gap: 0.5rem; justify-content: center; margin: 1.5rem 0;">
-                        ${(project.tags || []).map(tag => `<span style="background: rgba(0, 212, 255, 0.1); color: #00d4ff; padding: 0.25rem 0.75rem; border-radius: 15px; font-size: 0.8rem; border: 1px solid rgba(0, 212, 255, 0.2); display: inline-block;">${tag}</span>`).join('')}
+                    <h3>${this.getText(project.title) || 'Untitled Project'}</h3>
+                    <p>${this.getText(project.description) || 'No description available'}</p>
+                    <div class="project-tags">
+                        ${(project.tags || []).map(tag => `<span class="project-tag">${tag}</span>`).join('')}
                     </div>
-                    <div class="project-links" style="display: flex; justify-content: center; align-items: center;">
+                    <div class="project-links">
                         ${linksHtml}
                     </div>
                 </div>
