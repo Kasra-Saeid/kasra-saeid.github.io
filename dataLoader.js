@@ -482,20 +482,32 @@ class WebsiteDataLoader {
         }
 
         // Force the grid to be visible
-        skillsGrid.style.cssText = 'display: block !important; visibility: visible !important; opacity: 1 !important; background: #f8f8f8; padding: 20px; border: 2px solid red;';
-        skillsGrid.innerHTML = '<div style="background: red; color: white; padding: 15px; margin: 10px 0; font-size: 18px; font-weight: bold;">SKILLS SECTION LOADING...</div>';
+        skillsGrid.style.cssText = 'display: grid !important; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; visibility: visible !important; opacity: 1 !important;';
+        skillsGrid.innerHTML = '';
         console.log('Skills data available:', this.data.skills.length);
 
         this.data.skills.forEach((skill, index) => {
             console.log(`Processing skill category ${index}:`, skill);
             const skillCategory = document.createElement('div');
             skillCategory.className = 'skill-category';
-            skillCategory.style.cssText = 'background: #f8f9fa; border: 1px solid #dee2e6; padding: 20px; margin: 15px 0; border-radius: 8px; display: block !important; visibility: visible !important; opacity: 1 !important;';
+            skillCategory.style.cssText = 'background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); padding: 2rem; border-radius: 15px; transition: all 0.3s ease; backdrop-filter: blur(10px); display: block !important; visibility: visible !important; opacity: 1 !important; cursor: pointer;';
+            
+            // Add hover effect
+            skillCategory.addEventListener('mouseenter', () => {
+                skillCategory.style.transform = 'translateY(-5px)';
+                skillCategory.style.boxShadow = '0 10px 30px rgba(0, 212, 255, 0.2)';
+                skillCategory.style.borderColor = 'rgba(0, 212, 255, 0.3)';
+            });
+            skillCategory.addEventListener('mouseleave', () => {
+                skillCategory.style.transform = 'translateY(0)';
+                skillCategory.style.boxShadow = 'none';
+                skillCategory.style.borderColor = 'rgba(255, 255, 255, 0.1)';
+            });
             
             skillCategory.innerHTML = `
-                <h3 style="color: #333 !important; margin-bottom: 10px; font-size: 1.2rem;"><i class="${skill.icon || 'fas fa-cog'}"></i> <span>${this.getText(skill.category) || 'Unknown Category'}</span></h3>
-                <div class="skill-items" style="display: flex; flex-wrap: wrap; gap: 8px;">
-                    ${(skill.items || []).map(item => `<span class="skill-tag" style="background: #007bff; color: white; padding: 6px 12px; border-radius: 4px; font-size: 0.9rem; display: inline-block;">${item}</span>`).join('')}
+                <h3 style="color: #fff !important; margin-bottom: 1rem; font-size: 1.3rem; display: flex; align-items: center; gap: 0.5rem;"><i class="${skill.icon || 'fas fa-cog'}" style="color: #00d4ff;"></i> <span>${this.getText(skill.category) || 'Unknown Category'}</span></h3>
+                <div class="skill-items" style="display: flex; flex-wrap: wrap; gap: 0.75rem;">
+                    ${(skill.items || []).map(item => `<span class="skill-tag" style="background: linear-gradient(135deg, #00d4ff, #7c3aed); color: white; padding: 0.5rem 1rem; border-radius: 25px; font-size: 0.9rem; font-weight: 500; display: inline-block; transition: all 0.3s ease;">${item}</span>`).join('')}
                 </div>
             `;
             
@@ -542,8 +554,8 @@ class WebsiteDataLoader {
         console.log('Featured data available:', this.data.featured ? this.data.featured.length : 0);
 
         // Force the grid to be visible
-        grid.style.cssText = 'display: block !important; visibility: visible !important; opacity: 1 !important; background: #f0f8ff; padding: 20px; border: 2px solid blue;';
-        grid.innerHTML = '<div style="background: blue; color: white; padding: 15px; margin: 10px 0; font-size: 18px; font-weight: bold;">FEATURED SECTION LOADING...</div>';
+        grid.style.cssText = 'display: grid !important; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 2rem; visibility: visible !important; opacity: 1 !important;';
+        grid.innerHTML = '';
 
         if (!this.data.featured || this.data.featured.length === 0) {
             console.log('No featured items to display');
@@ -555,7 +567,19 @@ class WebsiteDataLoader {
             console.log(`Processing featured item ${index}:`, item);
             const featuredCard = document.createElement('div');
             featuredCard.className = 'project-card';
-            featuredCard.style.cssText = 'background: white; border: 1px solid #ddd; padding: 25px; margin: 20px 0; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); display: block !important; visibility: visible !important; opacity: 1 !important; min-height: 200px;';
+            featuredCard.style.cssText = 'background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); padding: 2rem; border-radius: 15px; transition: all 0.3s ease; backdrop-filter: blur(10px); display: block !important; visibility: visible !important; opacity: 1 !important; min-height: auto; overflow: hidden; position: relative; cursor: pointer;';
+            
+            // Add hover effect
+            featuredCard.addEventListener('mouseenter', () => {
+                featuredCard.style.transform = 'translateY(-10px)';
+                featuredCard.style.boxShadow = '0 20px 40px rgba(0, 0, 0, 0.3)';
+                featuredCard.style.borderColor = 'rgba(0, 212, 255, 0.3)';
+            });
+            featuredCard.addEventListener('mouseleave', () => {
+                featuredCard.style.transform = 'translateY(0)';
+                featuredCard.style.boxShadow = 'none';
+                featuredCard.style.borderColor = 'rgba(255, 255, 255, 0.1)';
+            });
             
             const linksHtml = Object.entries(item.links || {}).map(([key, url]) => {
                 let icon = 'fas fa-external-link-alt';
@@ -566,20 +590,20 @@ class WebsiteDataLoader {
                 else if (key === 'demo') icon = 'fas fa-play';
                 else if (key === 'lab') icon = 'fas fa-university';
                 
-                return `<a href="${url}" class="project-link" style="display: inline-block; margin: 5px; padding: 10px; background: #007bff; color: white; text-decoration: none; border-radius: 5px;"><i class="${icon}"></i></a>`;
+                return `<a href="${url}" class="project-link" style="display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; margin: 0 0.5rem 0 0; background: rgba(0, 212, 255, 0.1); color: #00d4ff; text-decoration: none; border-radius: 50%; border: 1px solid rgba(0, 212, 255, 0.3); transition: all 0.3s ease; font-size: 1rem;"><i class="${icon}"></i></a>`;
             }).join('');
             
             featuredCard.innerHTML = `
-                <div class="project-image" style="text-align: center; font-size: 2.5rem; color: #007bff; margin-bottom: 15px;">
+                <div class="project-image" style="text-align: center; font-size: 3rem; color: #00d4ff; margin-bottom: 1.5rem;">
                     <i class="${item.icon || 'fas fa-project-diagram'}"></i>
                 </div>
                 <div class="project-content">
-                    <h3 style="color: #333 !important; font-size: 1.3rem; margin-bottom: 10px; font-weight: 600;">${this.getText(item.title) || 'Untitled Project'}</h3>
-                    <p style="color: #666 !important; line-height: 1.6; margin-bottom: 15px; font-size: 0.95rem;">${this.getText(item.description) || 'No description available'}</p>
-                    <div class="project-tags" style="margin: 15px 0;">
-                        ${(item.tags || []).map(tag => `<span style="background: #28a745; color: white; padding: 4px 8px; margin: 3px; border-radius: 3px; font-size: 0.8rem; display: inline-block;">${tag}</span>`).join('')}
+                    <h3 style="color: #fff !important; font-size: 1.4rem; margin-bottom: 1rem; font-weight: 600; text-align: center;">${this.getText(item.title) || 'Untitled Project'}</h3>
+                    <p style="color: #cbd5e1 !important; line-height: 1.6; margin-bottom: 1.5rem; font-size: 0.95rem; text-align: center;">${this.getText(item.description) || 'No description available'}</p>
+                    <div class="project-tags" style="display: flex; flex-wrap: wrap; gap: 0.5rem; justify-content: center; margin: 1.5rem 0;">
+                        ${(item.tags || []).map(tag => `<span style="background: rgba(0, 212, 255, 0.1); color: #00d4ff; padding: 0.25rem 0.75rem; border-radius: 15px; font-size: 0.8rem; border: 1px solid rgba(0, 212, 255, 0.2); display: inline-block;">${tag}</span>`).join('')}
                     </div>
-                    <div class="project-links">
+                    <div class="project-links" style="display: flex; justify-content: center; align-items: center;">
                         ${linksHtml}
                     </div>
                 </div>
