@@ -43,68 +43,16 @@ body {
     align-items: center;
 }
 
-/* Enhanced KS Logo */
+/* Navigation Logo - Reverted to Original Text Style */
 .logo-text {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 50px;
-    height: 50px;
-    background: linear-gradient(135deg, #00d4ff 0%, #0ea5e9 25%, #7c3aed 75%, #9333ea 100%);
-    border-radius: 12px;
-    position: relative;
-    font-size: 1.4rem;
-    font-weight: 700;
     color: #fff;
-    border: 2px solid rgba(255, 255, 255, 0.2);
-    box-shadow: 
-        0 8px 32px rgba(0, 212, 255, 0.3),
-        0 4px 16px rgba(124, 58, 237, 0.2),
-        inset 0 2px 4px rgba(255, 255, 255, 0.3),
-        inset 0 -2px 4px rgba(0, 0, 0, 0.2);
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-decoration: none;
 }
 
 .logo-text::before {
-    content: 'KS';
-    position: relative;
-    z-index: 2;
-    background: linear-gradient(135deg, #fff 0%, #e0e7ff 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    text-shadow: none;
-}
-
-.logo-text::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(135deg, 
-        rgba(255, 255, 255, 0.2) 0%, 
-        transparent 50%, 
-        rgba(0, 212, 255, 0.2) 100%);
-    border-radius: 12px;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-
-.logo-text:hover {
-    transform: scale(1.1) rotate(5deg);
-    box-shadow: 
-        0 12px 48px rgba(0, 212, 255, 0.4),
-        0 8px 32px rgba(124, 58, 237, 0.3),
-        0 4px 16px rgba(236, 72, 153, 0.2),
-        inset 0 3px 6px rgba(255, 255, 255, 0.4),
-        inset 0 -3px 6px rgba(0, 0, 0, 0.3);
-}
-
-.logo-text:hover::after {
-    opacity: 1;
+    content: 'Kasra SD';
 }
 
 .accent {

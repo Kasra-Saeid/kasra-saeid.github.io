@@ -396,19 +396,6 @@ window.addEventListener('load', () => {
         border-top: 4px solid #00d4ff;
         border-radius: 50%;
         animation: enhancedSpin 1.2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
-        margin-bottom: 2rem;
-    `;
-    
-    const loadingText = document.createElement('div');
-    loadingText.textContent = 'KS';
-    loadingText.style.cssText = `
-        font-size: 2rem;
-        font-weight: 700;
-        background: linear-gradient(135deg, #00d4ff 0%, #7c3aed 100%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-        animation: pulse 2s ease-in-out infinite;
     `;
     
     const spinKeyframes = document.createElement('style');
@@ -418,16 +405,10 @@ window.addEventListener('load', () => {
             50% { transform: rotate(180deg) scale(1.1); }
             100% { transform: rotate(360deg) scale(1); }
         }
-        
-        @keyframes pulse {
-            0%, 100% { opacity: 1; transform: scale(1); }
-            50% { opacity: 0.7; transform: scale(1.05); }
-        }
     `;
     document.head.appendChild(spinKeyframes);
     
     loader.appendChild(spinner);
-    loader.appendChild(loadingText);
     document.body.appendChild(loader);
     
     setTimeout(() => {
