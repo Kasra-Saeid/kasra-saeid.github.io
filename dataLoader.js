@@ -619,42 +619,66 @@ class WebsiteDataLoader {
 
     // Populate projects section (for projects.html)
     populateProjects() {
-        console.log('populateProjects called, data:', this.data);
-        if (!this.data) return;
+        console.log('=== populateProjects called ===');
+        console.log('Data available:', !!this.data);
+        
+        if (!this.data || !this.data.projects) {
+            console.log('No data or projects available for projects section');
+            return;
+        }
+
+        console.log('Projects data:', this.data.projects);
 
         const projectsGrid = document.querySelector('.projects-grid');
-        console.log('Projects grid element:', projectsGrid);
-        if (!projectsGrid) return;
+        console.log('Projects grid element found:', !!projectsGrid);
+        if (!projectsGrid) {
+            console.log('Projects grid element not found');
+            return;
+        }
 
-        // Clear existing projects but keep the structure
+        // Force the grid to be visible with strong styling
+        projectsGrid.style.cssText = 'display: grid !important; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 2rem; visibility: visible !important; opacity: 1 !important;';
         projectsGrid.innerHTML = '';
-        console.log('Projects data:', this.data.projects);
+        console.log('Projects data available:', this.data.projects.length);
 
         this.data.projects.forEach((project, index) => {
             console.log(`Processing project ${index}:`, project);
             const projectCard = document.createElement('div');
             projectCard.className = 'project-card';
             projectCard.setAttribute('data-category', project.category);
+            projectCard.style.cssText = 'background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); padding: 2rem; border-radius: 15px; transition: all 0.3s ease; backdrop-filter: blur(10px); display: block !important; visibility: visible !important; opacity: 1 !important; min-height: auto; overflow: hidden; position: relative; cursor: pointer;';
             
-            const linksHtml = Object.entries(project.links).map(([key, url]) => {
+            // Add hover effect
+            projectCard.addEventListener('mouseenter', () => {
+                projectCard.style.transform = 'translateY(-10px)';
+                projectCard.style.boxShadow = '0 20px 40px rgba(0, 0, 0, 0.3)';
+                projectCard.style.borderColor = 'rgba(0, 212, 255, 0.3)';
+            });
+            projectCard.addEventListener('mouseleave', () => {
+                projectCard.style.transform = 'translateY(0)';
+                projectCard.style.boxShadow = 'none';
+                projectCard.style.borderColor = 'rgba(255, 255, 255, 0.1)';
+            });
+            
+            const linksHtml = Object.entries(project.links || {}).map(([key, url]) => {
                 let icon = 'fas fa-external-link-alt';
                 if (key === 'github') icon = 'fab fa-github';
                 else if (key === 'demo') icon = 'fas fa-play';
                 
-                return `<a href="${url}" class="project-link"><i class="${icon}"></i></a>`;
+                return `<a href="${url}" class="project-link" style="display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; margin: 0 0.5rem 0 0; background: rgba(0, 212, 255, 0.1); color: #00d4ff; text-decoration: none; border-radius: 50%; border: 1px solid rgba(0, 212, 255, 0.3); transition: all 0.3s ease; font-size: 1rem;"><i class="${icon}"></i></a>`;
             }).join('');
             
             projectCard.innerHTML = `
-                <div class="project-image">
-                    <i class="${project.icon}"></i>
+                <div class="project-image" style="text-align: center; font-size: 3rem; color: #00d4ff; margin-bottom: 1.5rem;">
+                    <i class="${project.icon || 'fas fa-project-diagram'}"></i>
                 </div>
                 <div class="project-content">
-                    <h3>${this.getText(project.title)}</h3>
-                    <p>${this.getText(project.description)}</p>
-                    <div class="project-tags">
-                        ${project.tags.map(tag => `<span>${tag}</span>`).join('')}
+                    <h3 style="color: #fff !important; font-size: 1.4rem; margin-bottom: 1rem; font-weight: 600; text-align: center;">${this.getText(project.title) || 'Untitled Project'}</h3>
+                    <p style="color: #cbd5e1 !important; line-height: 1.6; margin-bottom: 1.5rem; font-size: 0.95rem; text-align: center;">${this.getText(project.description) || 'No description available'}</p>
+                    <div class="project-tags" style="display: flex; flex-wrap: wrap; gap: 0.5rem; justify-content: center; margin: 1.5rem 0;">
+                        ${(project.tags || []).map(tag => `<span style="background: rgba(0, 212, 255, 0.1); color: #00d4ff; padding: 0.25rem 0.75rem; border-radius: 15px; font-size: 0.8rem; border: 1px solid rgba(0, 212, 255, 0.2); display: inline-block;">${tag}</span>`).join('')}
                     </div>
-                    <div class="project-links">
+                    <div class="project-links" style="display: flex; justify-content: center; align-items: center;">
                         ${linksHtml}
                     </div>
                 </div>
@@ -665,6 +689,7 @@ class WebsiteDataLoader {
         });
         
         console.log('Projects section population complete');
+        console.log('Final projects grid children count:', projectsGrid.children.length);
 
         // Set up filtering after projects are loaded
         setTimeout(() => {
@@ -975,29 +1000,64 @@ class WebsiteDataLoader {
 
     // Populate education timeline
     populateEducation() {
-        if (!this.data) return;
+        console.log('=== populateEducation called ===');
+        console.log('Data available:', !!this.data);
+        
+        if (!this.data || !this.data.education) {
+            console.log('No data or education items available for education section');
+            return;
+        }
+
+        console.log('Education data:', this.data.education);
 
         const timeline = document.querySelector('.timeline');
-        if (!timeline) return;
+        console.log('Timeline element found:', !!timeline);
+        if (!timeline) {
+            console.log('Timeline element not found');
+            return;
+        }
 
+        // Force the timeline to be visible
+        timeline.style.cssText = 'position: relative; max-width: 800px; margin: 0 auto; display: block !important; visibility: visible !important; opacity: 1 !important;';
         timeline.innerHTML = '';
+        console.log('Education data available:', this.data.education.length);
 
-        this.data.education.forEach(item => {
+        this.data.education.forEach((item, index) => {
+            console.log(`Processing education item ${index}:`, item);
             const timelineItem = document.createElement('div');
             timelineItem.className = 'timeline-item';
+            timelineItem.style.cssText = 'position: relative; margin-bottom: 3rem; width: 50%; display: block !important; visibility: visible !important; opacity: 1 !important;';
+            
+            // Add positioning styles
+            if (index % 2 === 0) {
+                timelineItem.style.left = '0';
+                timelineItem.style.paddingRight = '2rem';
+            } else {
+                timelineItem.style.left = '50%';
+                timelineItem.style.paddingLeft = '2rem';
+            }
             
             timelineItem.innerHTML = `
-                <div class="timeline-dot"></div>
-                <div class="timeline-content">
-                    <h3>${this.getText(item.title)}</h3>
-                    <h4>${this.getText(item.institution)}</h4>
-                    <span class="timeline-date">${item.period}</span>
-                    <p>${this.getText(item.description)}</p>
+                <div class="timeline-dot" style="position: absolute; width: 20px; height: 20px; background: #00d4ff; border-radius: 50%; top: 0; ${index % 2 === 0 ? 'right: -10px;' : 'left: -10px;'}"></div>
+                <div class="timeline-content" style="background: rgba(26, 26, 46, 0.8); padding: 2rem; border-radius: 15px; border: 1px solid rgba(0, 212, 255, 0.1); display: block !important; visibility: visible !important; opacity: 1 !important;">
+                    <h3 style="color: #fff !important; margin-bottom: 0.5rem; font-size: 1.3rem; font-weight: 600;">${this.getText(item.title) || 'Untitled'}</h3>
+                    <h4 style="color: #00d4ff !important; margin-bottom: 0.5rem; font-size: 1.1rem; font-weight: 500;">${this.getText(item.institution) || 'Unknown Institution'}</h4>
+                    <span class="timeline-date" style="color: #9ca3af; font-size: 0.9rem; display: block; margin-bottom: 1rem;">${item.period || 'Unknown Period'}</span>
+                    <p style="color: #cbd5e1 !important; line-height: 1.6; margin: 0; font-size: 0.95rem;">${this.getText(item.description) || 'No description available'}</p>
                 </div>
             `;
             
             timeline.appendChild(timelineItem);
+            console.log(`Education item ${index} added to timeline`);
         });
+        
+        // Add timeline line
+        const timelineLine = document.createElement('div');
+        timelineLine.style.cssText = 'content: ""; position: absolute; left: 50%; top: 0; bottom: 0; width: 2px; background: linear-gradient(to bottom, #00d4ff, #7c3aed); transform: translateX(-50%);';
+        timeline.insertBefore(timelineLine, timeline.firstChild);
+        
+        console.log('Education section population complete');
+        console.log('Final timeline children count:', timeline.children.length);
     }
 
     // Initialize all content
