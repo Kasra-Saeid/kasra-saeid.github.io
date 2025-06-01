@@ -1,0 +1,820 @@
+{
+  "personal": {
+    "name": "Kasra",
+    "title": "AI Engineer & Quant Developer",
+    "email": "mail.kasrasaeid[at]gmail.com",
+    "university": "Tehran University",
+    "location": "Tehran, Iran",
+    "bio": {
+      "en": "Passionate about artificial intelligence, machine learning, quantitative finance, and creating intelligent solutions that make a difference. Currently studying at Tehran University.",
+      "fa": "علاقه‌مند به هوش مصنوعی، یادگیری ماشین، مالی کمی و ایجاد راه‌حل‌های هوشمند. در حال تحصیل در دانشگاه تهران."
+    },
+    "about": {
+      "en": "I'm Kasra, an AI Engineering student at Tehran University, deeply passionate about the intersection of technology, intelligence, and quantitative finance. My journey began with curiosity about how machines can learn and think, and has evolved into creating intelligent systems for both AI applications and financial markets.",
+      "fa": "من کسری هستم، دانشجوی مهندسی هوش مصنوعی در دانشگاه تهران که عمیقاً به تقاطع فناوری، هوش و مالی کمی علاقه‌مند است."
+    },
+    "stats": {
+      "projects": "50+",
+      "experience": "3+",
+      "technologies": "10+"
+    }
+  },
+  "social": {
+    "github": "#",
+    "linkedin": "#",
+    "twitter": "#",
+    "instagram": "#",
+    "youtube": "#"
+  },
+  "youtube": {
+    "channelName": "Kasra AI Tutorials",
+    "subscriberCount": "1.2K",
+    "totalViews": "25K",
+    "videoCount": "15",
+    "hoursOfContent": "48",
+    "channelLink": "#"
+  },
+  "achievements": {
+    "stats": {
+      "researchPapers": 5,
+      "competitionAwards": 12,
+      "researchPositions": 3,
+      "citations": 42
+    }
+  },
+  "skills": [
+    {
+      "category": {
+        "en": "Machine Learning",
+        "fa": "یادگیری ماشین"
+      },
+      "icon": "fas fa-brain",
+      "items": ["TensorFlow", "PyTorch", "Scikit-learn", "Keras", "XGBoost"]
+    },
+    {
+      "category": {
+        "en": "Quantitative Finance",
+        "fa": "مالی کمی"
+      },
+      "icon": "fas fa-coins",
+      "items": ["QuantLib", "Zipline", "Backtrader", "Pandas", "Risk Management"]
+    },
+    {
+      "category": {
+        "en": "Programming",
+        "fa": "برنامه‌نویسی"
+      },
+      "icon": "fas fa-code",
+      "items": ["Python", "JavaScript", "R", "SQL", "C++"]
+    },
+    {
+      "category": {
+        "en": "Computer Vision",
+        "fa": "بینایی کامپیوتر"
+      },
+      "icon": "fas fa-eye",
+      "items": ["OpenCV", "YOLO", "CNN", "Image Processing"]
+    },
+    {
+      "category": {
+        "en": "NLP",
+        "fa": "پردازش زبان طبیعی"
+      },
+      "icon": "fas fa-comments",
+      "items": ["NLTK", "spaCy", "Transformers", "BERT"]
+    },
+    {
+      "category": {
+        "en": "Data Science",
+        "fa": "علم داده"
+      },
+      "icon": "fas fa-database",
+      "items": ["Pandas", "NumPy", "Matplotlib", "Seaborn", "Jupyter"]
+    },
+    {
+      "category": {
+        "en": "Web Development",
+        "fa": "توسعه وب"
+      },
+      "icon": "fas fa-globe",
+      "items": ["React", "Node.js", "Flask", "Django", "HTML/CSS"]
+    },
+    {
+      "category": {
+        "en": "Trading & Analytics",
+        "fa": "معاملات و تحلیل"
+      },
+      "icon": "fas fa-chart-bar",
+      "items": ["Algorithmic Trading", "Portfolio Optimization", "Technical Analysis", "Market Data", "Backtesting"]
+    }
+  ],
+  "featured": [
+    {
+      "id": "deep-learning-paper",
+      "type": "research",
+      "title": {
+        "en": "Deep Learning for Financial Time Series",
+        "fa": "یادگیری عمیق برای سری‌های زمانی مالی"
+      },
+      "description": {
+        "en": "Published research paper in IEEE Transactions introducing a novel attention mechanism that improved cryptocurrency prediction accuracy by 23%. Featured in top-tier venue with 15+ citations.",
+        "fa": "مقاله پژوهشی منتشر شده در IEEE Transactions که مکانیزم توجه جدیدی را معرفی می‌کند که دقت پیش‌بینی رمزارز را 23% بهبود داد."
+      },
+      "icon": "fas fa-file-alt",
+      "tags": ["Research Paper", "Deep Learning", "IEEE Publication", "15+ Citations"],
+      "links": {
+        "paper": "#",
+        "github": "#"
+      }
+    },
+    {
+      "id": "ai-competition",
+      "type": "achievement",
+      "title": {
+        "en": "National AI Competition Winner",
+        "fa": "برنده مسابقه ملی هوش مصنوعی"
+      },
+      "description": {
+        "en": "1st place among 500+ participants in National AI Competition 2024. Developed real-time object detection system achieving 95.8% accuracy, earning $10,000 prize and national recognition.",
+        "fa": "رتبه اول در میان 500+ شرکت‌کننده در مسابقه ملی هوش مصنوعی 2024."
+      },
+      "icon": "fas fa-trophy",
+      "tags": ["Gold Medal", "Computer Vision", "Competition Winner", "$10K Prize"],
+      "links": {
+        "certificate": "#",
+        "github": "#"
+      }
+    },
+    {
+      "id": "trading-bot",
+      "type": "project",
+      "title": {
+        "en": "Algorithmic Trading Bot",
+        "fa": "ربات معاملات الگوریتمی"
+      },
+      "description": {
+        "en": "Sophisticated trading system using machine learning for market prediction and automated execution. Achieved 34.2% annual return with 18% volatility, earning 2nd place in International Quant Challenge.",
+        "fa": "سیستم معاملاتی پیشرفته با استفاده از یادگیری ماشین برای پیش‌بینی بازار و اجرای خودکار."
+      },
+      "icon": "fas fa-coins",
+      "tags": ["Quantitative Finance", "Machine Learning", "Trading", "Silver Medal"],
+      "links": {
+        "github": "#",
+        "demo": "#"
+      }
+    },
+    {
+      "id": "research-position",
+      "type": "position",
+      "title": {
+        "en": "Research Assistant Position",
+        "fa": "سمت دستیار پژوهش"
+      },
+      "description": {
+        "en": "Leading research on neural architecture search at Tehran University AI Lab. Supervising 5 undergraduate students, co-authored 2 papers, and secured $50K research grant for innovative AI projects.",
+        "fa": "رهبری پژوهش در جستجوی معماری عصبی در آزمایشگاه هوش مصنوعی دانشگاه تهران."
+      },
+      "icon": "fas fa-university",
+      "tags": ["Research Position", "Neural Architecture", "$50K Grant", "Leadership"],
+      "links": {
+        "lab": "#",
+        "publications": "#"
+      }
+    },
+    {
+      "id": "youtube-channel",
+      "type": "content",
+      "title": {
+        "en": "Educational YouTube Channel",
+        "fa": "کانال آموزشی یوتیوب"
+      },
+      "description": {
+        "en": "Educational content creator with 1.2K subscribers and 25K+ views. Sharing knowledge through tutorials on AI, machine learning, and quantitative finance, helping students worldwide learn cutting-edge technologies.",
+        "fa": "تولیدکننده محتوای آموزشی با 1.2 هزار مشترک و 25 هزار+ بازدید."
+      },
+      "icon": "fab fa-youtube",
+      "tags": ["Content Creation", "Education", "1.2K Subscribers", "25K+ Views"],
+      "links": {
+        "youtube": "youtube.html",
+        "channel": "#"
+      }
+    },
+    {
+      "id": "neurips-submission",
+      "type": "research",
+      "title": {
+        "en": "NeurIPS Submission: Mobile NAS",
+        "fa": "ارسال به NeurIPS: NAS موبایل"
+      },
+      "description": {
+        "en": "Submitted cutting-edge research to NeurIPS 2024 on efficient neural architecture search for mobile deployment. Novel evolutionary algorithm reduces search time by 80% while maintaining competitive accuracy.",
+        "fa": "پژوهش پیشرفته به NeurIPS 2024 درباره جستجوی کارآمد معماری عصبی برای استقرار موبایل ارسال شد."
+      },
+      "icon": "fas fa-mobile-alt",
+      "tags": ["NeurIPS 2024", "Under Review", "Mobile AI", "80% Speedup"],
+      "links": {
+        "preprint": "#",
+        "github": "#"
+      }
+    }
+  ],
+  "projects": [
+    {
+      "id": "neural-network-scratch",
+      "category": "ai-ml",
+      "title": {
+        "en": "Neural Network from Scratch",
+        "fa": "شبکه عصبی از ابتدا"
+      },
+      "description": {
+        "en": "Built a complete neural network implementation from scratch using only NumPy, including backpropagation, various activation functions, and gradient descent optimization.",
+        "fa": "ساخت پیاده‌سازی کامل شبکه عصبی از ابتدا با استفاده از NumPy."
+      },
+      "icon": "fas fa-brain",
+      "tags": ["Python", "NumPy", "Machine Learning", "Deep Learning"],
+      "links": {
+        "github": "#",
+        "demo": "#"
+      }
+    },
+    {
+      "id": "object-detection",
+      "category": "ai-ml",
+      "title": {
+        "en": "Computer Vision Object Detection",
+        "fa": "تشخیص اشیاء با بینایی کامپیوتر"
+      },
+      "description": {
+        "en": "Real-time object detection system using YOLO and OpenCV for identifying and tracking multiple objects in video streams with high accuracy and performance.",
+        "fa": "سیستم تشخیص اشیاء زمان واقعی با استفاده از YOLO و OpenCV."
+      },
+      "icon": "fas fa-eye",
+      "tags": ["Python", "OpenCV", "YOLO", "Computer Vision"],
+      "links": {
+        "github": "#",
+        "demo": "#"
+      }
+    },
+    {
+      "id": "nlp-sentiment-analysis",
+      "category": "ai-ml",
+      "title": {
+        "en": "NLP Sentiment Analysis Tool",
+        "fa": "ابزار تحلیل احساسات NLP"
+      },
+      "description": {
+        "en": "Advanced sentiment analysis tool using transformer models to analyze text emotions with high accuracy across multiple languages including Persian and English.",
+        "fa": "ابزار پیشرفته تحلیل احساسات با استفاده از مدل‌های ترانسفورمر برای تجزیه و تحلیل احساسات متن با دقت بالا در زبان‌های مختلف شامل فارسی و انگلیسی."
+      },
+      "icon": "fas fa-comments",
+      "tags": ["Python", "Transformers", "BERT", "NLP"],
+      "links": {
+        "github": "#",
+        "demo": "#"
+      }
+    },
+    {
+      "id": "ai-chatbot",
+      "category": "ai-ml",
+      "title": {
+        "en": "AI Chatbot with Context Awareness",
+        "fa": "چت‌بات هوشمند با آگاهی از زمینه"
+      },
+      "description": {
+        "en": "Intelligent conversational AI built with natural language processing capabilities, context awareness, and memory to provide meaningful and coherent responses.",
+        "fa": "هوش مصنوعی مکالمه‌ای هوشمند ساخته شده با قابلیت‌های پردازش زبان طبیعی، آگاهی از زمینه و حافظه برای ارائه پاسخ‌های معنادار و منسجم."
+      },
+      "icon": "fas fa-robot",
+      "tags": ["Python", "NLP", "Flask", "Transformers"],
+      "links": {
+        "github": "#",
+        "demo": "#"
+      }
+    },
+    {
+      "id": "rl-game-ai",
+      "category": "ai-ml",
+      "title": {
+        "en": "Reinforcement Learning Game AI",
+        "fa": "هوش مصنوعی بازی با یادگیری تقویتی"
+      },
+      "description": {
+        "en": "AI agent that learns to play games using Q-learning and deep reinforcement learning techniques, achieving superhuman performance in classic arcade games.",
+        "fa": "عامل هوش مصنوعی که با استفاده از Q-learning و تکنیک‌های یادگیری تقویتی عمیق، بازی‌های کلاسیک آرکید را با عملکرد فوق‌انسانی یاد می‌گیرد."
+      },
+      "icon": "fas fa-gamepad",
+      "tags": ["Python", "Reinforcement Learning", "PyTorch", "OpenAI Gym"],
+      "links": {
+        "github": "#",
+        "demo": "#"
+      }
+    },
+    {
+      "id": "algorithmic-trading-bot",
+      "category": "quant",
+      "title": {
+        "en": "Algorithmic Trading Bot",
+        "fa": "ربات معاملات الگوریتمی"
+      },
+      "description": {
+        "en": "Sophisticated algorithmic trading system using machine learning for market prediction, automated execution of trading strategies, and real-time risk management.",
+        "fa": "سیستم معاملات الگوریتمی پیشرفته با استفاده از یادگیری ماشین برای پیش‌بینی بازار، اجرای خودکار استراتژی‌های معاملاتی و مدیریت ریسک زمان واقعی."
+      },
+      "icon": "fas fa-coins",
+      "tags": ["Python", "QuantLib", "Machine Learning", "Trading"],
+      "links": {
+        "github": "#",
+        "demo": "#"
+      }
+    },
+    {
+      "id": "stock-price-prediction",
+      "category": "quant",
+      "title": {
+        "en": "Stock Price Prediction with LSTM",
+        "fa": "پیش‌بینی قیمت سهام با LSTM"
+      },
+      "description": {
+        "en": "Advanced machine learning model using LSTM networks to predict stock prices based on historical data, technical indicators, and market sentiment analysis.",
+        "fa": "مدل یادگیری ماشین پیشرفته با استفاده از شبکه‌های LSTM برای پیش‌بینی قیمت سهام بر اساس داده‌های تاریخی، شاخص‌های فنی و تحلیل احساسات بازار."
+      },
+      "icon": "fas fa-chart-line",
+      "tags": ["Python", "LSTM", "TensorFlow", "Financial Analysis"],
+      "links": {
+        "github": "#",
+        "demo": "#"
+      }
+    },
+    {
+      "id": "portfolio-optimization",
+      "category": "quant",
+      "title": {
+        "en": "Portfolio Optimization Engine",
+        "fa": "موتور بهینه‌سازی پورتفولیو"
+      },
+      "description": {
+        "en": "Modern portfolio theory implementation with Monte Carlo simulations for optimal asset allocation, risk-return optimization, and dynamic rebalancing strategies.",
+        "fa": "پیاده‌سازی تئوری پورتفولیو مدرن با شبیه‌سازی‌های مونت کارلو برای تخصیص بهینه دارایی، بهینه‌سازی ریسک-بازده و استراتژی‌های تعادل مجدد پویا."
+      },
+      "icon": "fas fa-chart-pie",
+      "tags": ["Python", "Portfolio Theory", "Monte Carlo", "Optimization"],
+      "links": {
+        "github": "#",
+        "demo": "#"
+      }
+    },
+    {
+      "id": "risk-management-system",
+      "category": "quant",
+      "title": {
+        "en": "Risk Management System",
+        "fa": "سیستم مدیریت ریسک"
+      },
+      "description": {
+        "en": "Comprehensive risk management system calculating VaR, stress testing, scenario analysis, and real-time portfolio risk monitoring for financial institutions.",
+        "fa": "سیستم جامع مدیریت ریسک محاسبه VaR، تست استرس، تحلیل سناریو و نظارت زمان واقعی ریسک پورتفولیو برای مؤسسات مالی."
+      },
+      "icon": "fas fa-shield-alt",
+      "tags": ["Python", "Risk Management", "VaR", "Stress Testing"],
+      "links": {
+        "github": "#",
+        "demo": "#"
+      }
+    },
+    {
+      "id": "ai-dashboard",
+      "category": "web",
+      "title": {
+        "en": "AI-Powered Dashboard",
+        "fa": "داشبورد مبتنی بر هوش مصنوعی"
+      },
+      "description": {
+        "en": "Interactive React dashboard for visualizing AI model performance, real-time data analytics, and predictive insights with beautiful charts and responsive design.",
+        "fa": "داشبورد تعاملی React برای تجسم عملکرد مدل هوش مصنوعی، تحلیل داده‌های زمان واقعی و بینش‌های پیش‌بینی با نمودارهای زیبا و طراحی واکنش‌گرا."
+      },
+      "icon": "fab fa-react",
+      "tags": ["React", "JavaScript", "D3.js", "Dashboard"],
+      "links": {
+        "github": "#",
+        "demo": "#"
+      }
+    },
+    {
+      "id": "ml-api-service",
+      "category": "web",
+      "title": {
+        "en": "ML Model API Service",
+        "fa": "سرویس API مدل یادگیری ماشین"
+      },
+      "description": {
+        "en": "RESTful API service built with Flask for serving machine learning models in production, including model versioning, A/B testing, and performance monitoring.",
+        "fa": "سرویس API RESTful ساخته شده با Flask برای ارائه مدل‌های یادگیری ماشین در محیط تولید، شامل نسخه‌بندی مدل، تست A/B و نظارت بر عملکرد."
+      },
+      "icon": "fas fa-server",
+      "tags": ["Python", "Flask", "Docker", "API"],
+      "links": {
+        "github": "#",
+        "demo": "#"
+      }
+    },
+    {
+      "id": "market-data-analysis",
+      "category": "data",
+      "title": {
+        "en": "Market Data Analysis Platform",
+        "fa": "پلتفرم تحلیل داده‌های بازار"
+      },
+      "description": {
+        "en": "Comprehensive data analysis platform for financial markets using advanced statistical methods, time series analysis, and machine learning for pattern recognition.",
+        "fa": "پلتفرم جامع تحلیل داده برای بازارهای مالی با استفاده از روش‌های آماری پیشرفته، تحلیل سری زمانی و یادگیری ماشین برای تشخیص الگو."
+      },
+      "icon": "fas fa-chart-bar",
+      "tags": ["Python", "Pandas", "Statistical Analysis", "Visualization"],
+      "links": {
+        "github": "#",
+        "demo": "#"
+      }
+    },
+    {
+      "id": "big-data-pipeline",
+      "category": "data",
+      "title": {
+        "en": "Big Data Processing Pipeline",
+        "fa": "خط لوله پردازش کلان داده"
+      },
+      "description": {
+        "en": "Scalable data processing pipeline for handling large financial datasets, real-time streaming data, and batch processing with Apache Spark and Kafka.",
+        "fa": "خط لوله پردازش داده مقیاس‌پذیر برای مدیریت مجموعه داده‌های مالی بزرگ، داده‌های جریانی زمان واقعی و پردازش دسته‌ای با Apache Spark و Kafka."
+      },
+      "icon": "fas fa-database",
+      "tags": ["Python", "Apache Spark", "Kafka", "Big Data"],
+      "links": {
+        "github": "#",
+        "demo": "#"
+      }
+    }
+  ],
+  "videos": [
+    {
+      "id": "neural-networks-tutorial",
+      "title": {
+        "en": "Neural Networks from Scratch in Python",
+        "fa": "شبکه‌های عصبی از ابتدا با پایتون"
+      },
+      "description": {
+        "en": "Learn how to build neural networks from scratch using only NumPy. We'll cover forward propagation, backpropagation, and gradient descent optimization.",
+        "fa": "یاد بگیرید چگونه شبکه‌های عصبی را از ابتدا فقط با NumPy بسازید."
+      },
+      "thumbnail": "Neural Networks Explained",
+      "publishDate": "2 weeks ago",
+      "views": "2.3K",
+      "tags": ["Python", "Neural Networks", "Machine Learning", "Tutorial"],
+      "links": {
+        "youtube": "#",
+        "github": "#"
+      }
+    },
+    {
+      "id": "trading-bot-tutorial",
+      "title": {
+        "en": "Building an Algorithmic Trading Bot",
+        "fa": "ساخت ربات معاملات الگوریتمی"
+      },
+      "description": {
+        "en": "Step-by-step guide to creating an algorithmic trading bot using Python. We'll implement moving averages, RSI indicators, and backtesting strategies.",
+        "fa": "راهنمای گام به گام برای ایجاد ربات معاملات الگوریتمی با پایتون."
+      },
+      "thumbnail": "Algorithmic Trading",
+      "publishDate": "1 month ago",
+      "views": "4.1K",
+      "tags": ["Python", "Trading", "Quantitative Finance", "Algorithms"],
+      "links": {
+        "youtube": "#",
+        "github": "#"
+      }
+    },
+    {
+      "id": "yolo-object-detection",
+      "title": {
+        "en": "Real-time Object Detection with YOLO",
+        "fa": "تشخیص اشیاء زمان واقعی با YOLO"
+      },
+      "description": {
+        "en": "Learn how to implement real-time object detection using YOLO and OpenCV. We'll build a system that can detect and track multiple objects in video streams.",
+        "fa": "یاد بگیرید چگونه تشخیص اشیاء زمان واقعی را با YOLO و OpenCV پیاده‌سازی کنید."
+      },
+      "thumbnail": "Computer Vision",
+      "publishDate": "3 weeks ago",
+      "views": "3.7K",
+      "tags": ["Python", "YOLO", "Computer Vision", "OpenCV"],
+      "links": {
+        "youtube": "#",
+        "github": "#"
+      }
+    },
+    {
+      "id": "sentiment-analysis-transformers",
+      "title": {
+        "en": "Sentiment Analysis with Transformers",
+        "fa": "تحلیل احساسات با ترانسفورمرها"
+      },
+      "description": {
+        "en": "Dive into natural language processing with transformer models. Build a sentiment analysis system that works with both English and Persian text.",
+        "fa": "به پردازش زبان طبیعی با مدل‌های ترانسفورمر بپردازید."
+      },
+      "thumbnail": "NLP with Transformers",
+      "publishDate": "1 week ago",
+      "views": "1.9K",
+      "tags": ["NLP", "Transformers", "BERT", "Sentiment Analysis"],
+      "links": {
+        "youtube": "#",
+        "github": "#"
+      }
+    },
+    {
+      "id": "portfolio-optimization",
+      "title": {
+        "en": "Portfolio Optimization with Python",
+        "fa": "بهینه‌سازی پورتفولیو با پایتون"
+      },
+      "description": {
+        "en": "Learn modern portfolio theory and implement portfolio optimization algorithms using Python. We'll cover risk-return optimization and Monte Carlo simulations.",
+        "fa": "تئوری پورتفولیو مدرن و پیاده‌سازی الگوریتم‌های بهینه‌سازی پورتفولیو با پایتون یاد بگیرید."
+      },
+      "thumbnail": "Portfolio Optimization",
+      "publishDate": "2 months ago",
+      "views": "5.2K",
+      "tags": ["Python", "Finance", "Portfolio Theory", "Optimization"],
+      "links": {
+        "youtube": "#",
+        "github": "#"
+      }
+    },
+    {
+      "id": "reinforcement-learning-game",
+      "title": {
+        "en": "AI Game Agent with Reinforcement Learning",
+        "fa": "عامل بازی هوشمند با یادگیری تقویتی"
+      },
+      "description": {
+        "en": "Build an AI agent that learns to play games using reinforcement learning. We'll implement Q-learning and Deep Q-Networks (DQN) from scratch.",
+        "fa": "عامل هوشمندی بسازید که با یادگیری تقویتی بازی یاد می‌گیرد."
+      },
+      "thumbnail": "RL Game AI",
+      "publishDate": "6 weeks ago",
+      "views": "2.8K",
+      "tags": ["Reinforcement Learning", "Q-Learning", "DQN", "Gaming"],
+      "links": {
+        "youtube": "#",
+        "github": "#"
+      }
+    }
+  ],
+  "achievements_detailed": [
+    {
+      "id": "ieee-paper",
+      "category": "papers",
+      "type": "paper",
+      "title": {
+        "en": "Deep Learning Approaches for Financial Time Series Prediction",
+        "fa": "روش‌های یادگیری عمیق برای پیش‌بینی سری‌های زمانی مالی"
+      },
+      "subtitle": {
+        "en": "IEEE Transactions on Neural Networks",
+        "fa": "IEEE Transactions on Neural Networks"
+      },
+      "description": {
+        "en": "A comprehensive study on applying LSTM and Transformer architectures for predicting cryptocurrency market movements. The paper introduces a novel attention mechanism that improved prediction accuracy by 23%.",
+        "fa": "مطالعه جامعی درباره کاربرد معماری‌های LSTM و Transformer برای پیش‌بینی حرکات بازار رمزارز."
+      },
+      "date": "March 2024",
+      "status": "published",
+      "icon": "fas fa-file-alt",
+      "details": {
+        "contributions": [
+          "Novel attention mechanism for time series",
+          "23% improvement in prediction accuracy",
+          "Comprehensive evaluation on 50+ cryptocurrencies",
+          "Open-source implementation provided"
+        ]
+      },
+      "links": {
+        "paper": "#",
+        "github": "#",
+        "citations": "#"
+      },
+      "citations": 15
+    },
+    {
+      "id": "national-ai-competition",
+      "category": "competitions",
+      "type": "competition",
+      "title": {
+        "en": "1st Place - National AI Competition 2024",
+        "fa": "رتبه اول - مسابقه ملی هوش مصنوعی 2024"
+      },
+      "subtitle": {
+        "en": "Computer Vision Challenge",
+        "fa": "چالش بینایی کامپیوتر"
+      },
+      "description": {
+        "en": "Won first place among 500+ participants in a national computer vision competition. Developed a real-time object detection system achieving 95.8% accuracy on the test dataset.",
+        "fa": "رتبه اول در میان 500+ شرکت‌کننده در یک مسابقه ملی بینایی کامپیوتر. سیستم تشخیص اشیاء زمان واقعی با دقت 95.8% روی مجموعه داده تست توسعه دادم."
+      },
+      "date": "February 2024",
+      "status": "completed",
+      "icon": "fas fa-trophy",
+      "details": {
+        "contributions": [
+          "500+ participants from 50+ universities",
+          "Real-time object detection challenge",
+          "95.8% accuracy achieved",
+          "$10,000 prize money"
+        ]
+      },
+      "links": {
+        "certificate": "#",
+        "github": "#",
+        "news": "#"
+      }
+    },
+    {
+      "id": "research-assistant-position",
+      "category": "positions",
+      "type": "position",
+      "title": {
+        "en": "Research Assistant",
+        "fa": "دستیار پژوهش"
+      },
+      "subtitle": {
+        "en": "Tehran University - AI Research Lab",
+        "fa": "دانشگاه تهران - آزمایشگاه پژوهش هوش مصنوعی"
+      },
+      "description": {
+        "en": "Leading research on neural architecture search for efficient model deployment. Supervising undergraduate students and collaborating with international research teams on cutting-edge AI projects.",
+        "fa": "رهبری پژوهش در جستجوی معماری عصبی برای استقرار مؤثر مدل. نظارت بر دانشجویان کارشناسی و همکاری با تیم‌های پژوهشی بین‌المللی در پروژه‌های پیشرفته هوش مصنوعی."
+      },
+      "date": "Jan 2024 - Present",
+      "status": "ongoing",
+      "icon": "fas fa-briefcase",
+      "details": {
+        "contributions": [
+          "Leading 3 research projects",
+          "Supervising 5 undergraduate students",
+          "Co-authored 2 conference papers",
+          "Secured $50K research grant"
+        ]
+      },
+      "links": {
+        "lab": "#",
+        "publications": "#"
+      }
+    },
+    {
+      "id": "neurips-submission",
+      "category": "papers",
+      "type": "paper",
+      "title": {
+        "en": "Efficient Neural Architecture Search for Mobile Deployment",
+        "fa": "جستجوی معماری عصبی کارآمد برای استقرار موبایل"
+      },
+      "subtitle": {
+        "en": "NeurIPS 2024 (Under Review)",
+        "fa": "NeurIPS 2024 (در حال بررسی)"
+      },
+      "description": {
+        "en": "Proposed a novel evolutionary algorithm for neural architecture search that reduces search time by 80% while maintaining competitive accuracy. The method is specifically designed for mobile deployment constraints.",
+        "fa": "الگوریتم تکاملی جدیدی برای جستجوی معماری عصبی پیشنهاد شد که زمان جستجو را 80% کاهش می‌دهد در حالی که دقت رقابتی را حفظ می‌کند."
+      },
+      "date": "Submitted May 2024",
+      "status": "ongoing",
+      "icon": "fas fa-file-alt",
+      "details": {
+        "contributions": [
+          "80% reduction in search time",
+          "Mobile-optimized architectures",
+          "Multi-objective optimization",
+          "Extensive benchmark evaluation"
+        ]
+      },
+      "links": {
+        "preprint": "#",
+        "github": "#"
+      }
+    },
+    {
+      "id": "international-quant-challenge",
+      "category": "competitions",
+      "type": "competition",
+      "title": {
+        "en": "2nd Place - International Quant Challenge",
+        "fa": "رتبه دوم - چالش بین‌المللی کوانت"
+      },
+      "subtitle": {
+        "en": "Algorithmic Trading Competition",
+        "fa": "مسابقه معاملات الگوریتمی"
+      },
+      "description": {
+        "en": "Achieved second place in an international algorithmic trading competition with 1000+ participants. Developed a multi-asset trading strategy achieving 34.2% annual return with 18% volatility.",
+        "fa": "رتبه دوم در یک مسابقه بین‌المللی معاملات الگوریتمی با 1000+ شرکت‌کننده کسب کردم. استراتژی معاملاتی چند دارایی با بازده سالانه 34.2% و نوسان 18% توسعه دادم."
+      },
+      "date": "December 2023",
+      "status": "completed",
+      "icon": "fas fa-trophy",
+      "details": {
+        "contributions": [
+          "34.2% annual return",
+          "18% volatility (Sharpe ratio: 1.9)",
+          "Multi-asset portfolio",
+          "Risk-adjusted optimization"
+        ]
+      },
+      "links": {
+        "report": "#",
+        "certificate": "#"
+      }
+    },
+    {
+      "id": "teaching-assistant",
+      "category": "positions",
+      "type": "position",
+      "title": {
+        "en": "Teaching Assistant",
+        "fa": "دستیار آموزشی"
+      },
+      "subtitle": {
+        "en": "Machine Learning Course - Tehran University",
+        "fa": "درس یادگیری ماشین - دانشگاه تهران"
+      },
+      "description": {
+        "en": "Assisted in teaching machine learning fundamentals to 120+ undergraduate students. Developed course materials, graded assignments, and conducted weekly lab sessions on practical ML implementations.",
+        "fa": "در تدریس مبانی یادگیری ماشین به 120+ دانشجوی کارشناسی کمک کردم. مطالب درسی توسعه دادم، تکالیف را نمره‌دهی کردم و جلسات آزمایشگاهی هفتگی درباره پیاده‌سازی‌های عملی ML برگزار کردم."
+      },
+      "date": "Sep 2023 - Feb 2024",
+      "status": "completed",
+      "icon": "fas fa-chalkboard-teacher",
+      "details": {
+        "contributions": [
+          "120+ students taught",
+          "Developed 15 lab exercises",
+          "Created video tutorials",
+          "4.8/5 student rating"
+        ]
+      },
+      "links": {
+        "tutorials": "#",
+        "materials": "#"
+      }
+    }
+  ],
+  "education": [
+    {
+      "id": "ai-engineering",
+      "title": {
+        "en": "AI Engineering Student",
+        "fa": "دانشجوی مهندسی هوش مصنوعی"
+      },
+      "institution": {
+        "en": "Tehran University",
+        "fa": "دانشگاه تهران"
+      },
+      "period": "2021 - Present",
+      "description": {
+        "en": "Pursuing a degree in AI Engineering with focus on machine learning, deep learning, and intelligent systems. Maintaining excellent academic performance while working on cutting-edge research projects.",
+        "fa": "تحصیل در رشته مهندسی هوش مصنوعی با تمرکز بر یادگیری ماشین، یادگیری عمیق و سیستم‌های هوشمند."
+      }
+    },
+    {
+      "id": "ml-intern",
+      "title": {
+        "en": "Machine Learning Intern",
+        "fa": "کارآموز یادگیری ماشین"
+      },
+      "institution": {
+        "en": "Tech Startup",
+        "fa": "استارتاپ فناوری"
+      },
+      "period": "Summer 2023",
+      "description": {
+        "en": "Developed and deployed machine learning models for real-world applications. Gained hands-on experience with MLOps, model optimization, and production deployment.",
+        "fa": "توسعه و استقرار مدل‌های یادگیری ماشین برای کاربردهای دنیای واقعی."
+      }
+    },
+    {
+      "id": "research-assistant",
+      "title": {
+        "en": "Research Assistant",
+        "fa": "دستیار پژوهش"
+      },
+      "institution": {
+        "en": "University AI Lab",
+        "fa": "آزمایشگاه هوش مصنوعی دانشگاه"
+      },
+      "period": "2022 - 2023",
+      "description": {
+        "en": "Assisted in research projects focusing on natural language processing and computer vision. Co-authored research papers and presented findings at academic conferences.",
+        "fa": "کمک در پروژه‌های پژوهشی با تمرکز بر پردازش زبان طبیعی و بینایی کامپیوتر."
+      }
+    }
+  ]
+} 

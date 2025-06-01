@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Projects - Kasra | AI Engineering Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+    <style>
+        .projects-header {
+            text-align: center;
+            padding: 8rem 0 4rem;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
+        }
+        
+        .projects-header h1 {
+            font-size: 3rem;
+            color: #fff;
+            margin-bottom: 1rem;
+        }
+        
+        .projects-header p {
+            font-size: 1.2rem;
+            color: #cbd5e1;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .filter-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin: 3rem 0;
+            flex-wrap: wrap;
+        }
+        
+        .filter-btn {
+            padding: 0.75rem 1.5rem;
+            border: 2px solid #00d4ff;
+            background: transparent;
+            color: #00d4ff;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+        
+        .filter-btn.active,
+        .filter-btn:hover {
+            background: #00d4ff;
+            color: #0a0a0a;
+        }
+        
+        .projects-container {
+            background: #0a0a0a;
+            padding: 4rem 0;
+        }
+        
+        .project-card {
+            margin-bottom: 2rem;
+        }
+        
+        .project-card.hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html#home" style="text-decoration: none;">
+                    <span class="logo-text">Kasra<span class="accent">.dev</span></span>
+                </a>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html#about" class="nav-link" data-en="About" data-fa="درباره">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="index.html#featured" class="nav-link" data-en="Featured" data-fa="برجسته">Featured</a>
+                </li>
+                <li class="nav-item">
+                    <a href="index.html#education" class="nav-link" data-en="Education" data-fa="تحصیلات">Education</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-en="More" data-fa="بیشتر">More</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="projects.html" class="active" data-en="All Projects" data-fa="همه پروژه‌ها">All Projects</a></li>
+                        <li><a href="youtube.html" data-en="YouTube" data-fa="یوتیوب">YouTube</a></li>
+                        <li><a href="achievements.html" data-en="Achievements" data-fa="دستاوردها">Achievements</a></li>
+                        <li><a href="index.html#skills" data-en="Skills" data-fa="مهارت‌ها">Skills</a></li>
+                        <li><a href="index.html#contact" data-en="Contact" data-fa="تماس">Contact</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="language-switch">
+                <button class="lang-btn active" data-lang="en">EN</button>
+                <button class="lang-btn" data-lang="fa">فا</button>
+            </div>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Projects Header -->
+    <section class="projects-header">
+        <div class="container">
+            <h1 data-en="All Projects" data-fa="همه پروژه‌ها">All Projects</h1>
+            <p data-en="A comprehensive collection of my work in AI, machine learning, quantitative finance, and software development. Each project represents a unique challenge and learning experience." data-fa="مجموعه‌ای جامع از کارهای من در هوش مصنوعی، یادگیری ماشین، مالی کمی و توسعه نرم‌افزار. هر پروژه نشان‌دهنده چالش و تجربه یادگیری منحصر به فردی است.">
+                A comprehensive collection of my work in AI, machine learning, quantitative finance, and software development. Each project represents a unique challenge and learning experience.
+            </p>
+        </div>
+    </section>
+
+    <!-- Filter Tabs -->
+    <section class="filter-section">
+        <div class="container">
+            <div class="filter-tabs">
+                <button class="filter-btn active" data-filter="all" data-en="All Projects" data-fa="همه پروژه‌ها">All Projects</button>
+                <button class="filter-btn" data-filter="ai-ml" data-en="AI & Machine Learning" data-fa="هوش مصنوعی و یادگیری ماشین">AI & Machine Learning</button>
+                <button class="filter-btn" data-filter="quant-finance" data-en="Quantitative Finance" data-fa="مالی کمی">Quantitative Finance</button>
+                <button class="filter-btn" data-filter="web-dev" data-en="Web Development" data-fa="توسعه وب">Web Development</button>
+                <button class="filter-btn" data-filter="data-science" data-en="Data Science" data-fa="علم داده">Data Science</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Grid -->
+    <section class="projects-container">
+        <div class="container">
+            <div class="projects-grid">
+                <!-- Project cards will be populated dynamically from data.json -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-text">
+                    <p data-en="&copy; 2024 Kasra's Portfolio. Made with ❤️ for showcasing AI engineering and quant development skills." data-fa="&copy; ۲۰۲۴ پورتفولیو کسری. با ❤️ برای نمایش مهارت‌های مهندسی هوش مصنوعی و توسعه کوانت ساخته شده.">&copy; 2024 Kasra's Portfolio. Made with ❤️ for showcasing AI engineering and quant development skills.</p>
+                </div>
+                <div class="social-links">
+                    <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="dataLoader.js"></script>
+</body>
+</html> 
