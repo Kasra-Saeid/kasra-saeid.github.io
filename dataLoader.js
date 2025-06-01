@@ -1052,7 +1052,10 @@ window.testDataLoader = async function() {
 // Initialize when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
     console.log('DOM loaded, initializing dataLoader...');
-    dataLoader.initializeContent();
+    // Add a small delay to ensure any other scripts have loaded
+    setTimeout(() => {
+        dataLoader.initializeContent();
+    }, 100);
 });
 
 // Export for use in other scripts
