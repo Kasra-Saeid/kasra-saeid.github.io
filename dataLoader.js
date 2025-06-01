@@ -471,9 +471,15 @@ class WebsiteDataLoader {
             return;
         }
 
+        // Check if already populated to avoid duplicates
+        const skillsGrid = document.querySelector('.skills-grid');
+        if (skillsGrid && skillsGrid.children.length > 0) {
+            console.log('Skills already populated, skipping...');
+            return;
+        }
+
         console.log('Skills data:', this.data.skills);
         
-        const skillsGrid = document.querySelector('.skills-grid');
         console.log('Skills grid element found:', !!skillsGrid);
         
         if (!skillsGrid) {
@@ -539,10 +545,21 @@ class WebsiteDataLoader {
             const altGrid = document.querySelector('.projects-grid');
             if (altGrid) {
                 console.log('Using alternative selector for featured grid');
+                // Check if already populated to avoid duplicates
+                if (altGrid.children.length > 0) {
+                    console.log('Featured already populated, skipping...');
+                    return;
+                }
                 this.populateFeaturedItems(altGrid);
                 return;
             }
             console.log('No suitable grid element found for featured section');
+            return;
+        }
+
+        // Check if already populated to avoid duplicates
+        if (featuredGrid.children.length > 0) {
+            console.log('Featured already populated, skipping...');
             return;
         }
 
@@ -1017,6 +1034,12 @@ class WebsiteDataLoader {
             return;
         }
 
+        // Check if already populated to avoid duplicates
+        if (timeline.children.length > 0) {
+            console.log('Education already populated, skipping...');
+            return;
+        }
+
         // Force the timeline to be visible
         timeline.style.cssText = 'position: relative; max-width: 800px; margin: 0 auto; display: block !important; visibility: visible !important; opacity: 1 !important;';
         timeline.innerHTML = '';
@@ -1144,10 +1167,15 @@ window.testDataLoader = async function() {
 // Initialize when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
     console.log('DOM loaded, initializing dataLoader...');
-    // Add a small delay to ensure any other scripts have loaded
-    setTimeout(() => {
-        dataLoader.initializeContent();
-    }, 100);
+    // Only initialize if not already initialized
+    if (!dataLoader.isInitialized) {
+        // Add a small delay to ensure any other scripts have loaded
+        setTimeout(() => {
+            dataLoader.initializeContent();
+        }, 100);
+    } else {
+        console.log('DataLoader already initialized, skipping duplicate initialization...');
+    }
 });
 
 // Export for use in other scripts
