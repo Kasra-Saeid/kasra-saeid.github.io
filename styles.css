@@ -71,16 +71,6 @@ body {
     transition: opacity 0.3s ease;
 }
 
-.logo-text:hover {
-    transform: scale(1.1) rotate(5deg);
-    box-shadow: 
-        0 12px 48px rgba(0, 212, 255, 0.4),
-        0 8px 32px rgba(124, 58, 237, 0.3),
-        0 4px 16px rgba(236, 72, 153, 0.2),
-        inset 0 3px 6px rgba(255, 255, 255, 0.4),
-        inset 0 -3px 6px rgba(0, 0, 0, 0.3);
-}
-
 .logo-text:hover::after {
     opacity: 1;
 }
@@ -163,10 +153,16 @@ body {
     font-size: 0.7rem;
     margin-left: 0.5rem;
     transition: transform 0.3s ease;
+    display: inline-block;
 }
 
 .dropdown:hover .dropdown-toggle::after {
     transform: rotate(180deg);
+}
+
+/* Prevent dropdown toggle from getting the nav-link underline */
+.dropdown-toggle.nav-link::after {
+    display: none !important;
 }
 
 .dropdown-menu {
