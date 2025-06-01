@@ -121,10 +121,13 @@ document.addEventListener('DOMContentLoaded', () => {
     setTimeout(() => {
         const animateElements = document.querySelectorAll('.skill-category, .project-card, .timeline-item, .stat-item, .achievement-card, .video-card');
         animateElements.forEach((el, index) => {
-            // Set initial state for animation
-            el.style.opacity = '0';
-            el.style.transform = 'translateY(30px)';
-            el.style.transition = 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1)';
+            // Only apply animation styles to elements that are specifically marked for animation
+            // Don't automatically hide all elements
+            if (el.classList.contains('animate-on-scroll')) {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(30px)';
+                el.style.transition = 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1)';
+            }
             
             observer.observe(el);
         });
@@ -134,7 +137,8 @@ document.addEventListener('DOMContentLoaded', () => {
 // Add enhanced CSS for animation classes
 const style = document.createElement('style');
 style.textContent = `
-    .skill-category, .project-card, .timeline-item, .stat-item, .achievement-card, .video-card {
+    /* Only hide elements that are specifically marked for animation */
+    .skill-category.animate-on-scroll, .project-card.animate-on-scroll, .timeline-item.animate-on-scroll, .stat-item.animate-on-scroll, .achievement-card.animate-on-scroll, .video-card.animate-on-scroll {
         opacity: 0;
         transform: translateY(30px);
         transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
